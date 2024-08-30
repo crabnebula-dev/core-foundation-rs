@@ -236,11 +236,7 @@ impl CGContextRef {
         }
     }
 
-    pub fn set_font_smoothing_style(&self, style: i32) {
-        unsafe {
-            CGContextSetFontSmoothingStyle(self.as_ptr(), style as _);
-        }
-    }
+   
 
     pub fn set_should_smooth_fonts(&self, should_smooth_fonts: bool) {
         unsafe {
@@ -663,7 +659,6 @@ extern {
     fn CGContextSetBlendMode(c: ::sys::CGContextRef, blendMode: CGBlendMode);
     fn CGContextSetAllowsFontSmoothing(c: ::sys::CGContextRef, allowsFontSmoothing: bool);
     fn CGContextSetShouldSmoothFonts(c: ::sys::CGContextRef, shouldSmoothFonts: bool);
-    fn CGContextSetFontSmoothingStyle(c: ::sys::CGContextRef, style: c_int);
     fn CGContextSetAllowsAntialiasing(c: ::sys::CGContextRef, allowsAntialiasing: bool);
     fn CGContextSetShouldAntialias(c: ::sys::CGContextRef, shouldAntialias: bool);
     fn CGContextSetAllowsFontSubpixelQuantization(c: ::sys::CGContextRef,
